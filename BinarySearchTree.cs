@@ -73,13 +73,13 @@ public class BinarySearchTree<T> where T : IComparable<T>
     public void InsertRecursively(T value)
     {
         this.Root = InsertRecursivelyHelper(this.Root, value);
-        this.Size += 1;
     }
 
     public Node? InsertRecursivelyHelper(Node? node, T value)
     {
         // base case
         if (node == null) {
+            this.Size += 1;
             return new Node(value);
         }
 
