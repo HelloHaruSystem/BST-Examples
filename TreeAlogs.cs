@@ -8,9 +8,9 @@ public class TreeAlgos<U> where U : IComparable<U>
             // visit
             PrintValue(node);
             // left
-            PrintPreOrderRecursive(node.left);
+            PrintPreOrderRecursive(node.Left);
             // right
-            PrintPreOrderRecursive(node.right);
+            PrintPreOrderRecursive(node.Right);
         }
     }
 
@@ -19,11 +19,11 @@ public class TreeAlgos<U> where U : IComparable<U>
         if (node != null)
         {
             // left
-            PrintInOrderRecursive(node.left);
+            PrintInOrderRecursive(node.Left);
             // visit
             PrintValue(node);
             // right
-            PrintInOrderRecursive(node.right);
+            PrintInOrderRecursive(node.Right);
         }
     }
 
@@ -32,9 +32,9 @@ public class TreeAlgos<U> where U : IComparable<U>
         if (node != null)
         {
             // left
-            PrintPostOrderRecursive(node.left);
+            PrintPostOrderRecursive(node.Left);
             // right
-            PrintPostOrderRecursive(node.right);
+            PrintPostOrderRecursive(node.Right);
             // visit
             PrintValue(node);
         }
@@ -57,15 +57,15 @@ public class TreeAlgos<U> where U : IComparable<U>
             PrintValue(current);
 
             // add right to the stack (last out)
-            if (current.right != null)
+            if (current.Right != null)
             {
-                stack.Push(current.right);
+                stack.Push(current.Right);
             }
 
             // add left to the stack (first out)
-            if (current.left != null)
+            if (current.Left != null)
             {
-                stack.Push(current.left);
+                stack.Push(current.Left);
             }
         }
     }
@@ -90,7 +90,7 @@ public class TreeAlgos<U> where U : IComparable<U>
             while (current != null)
             {
                 stack.Push(current);
-                current = current.left;
+                current = current.Left;
             }
 
             current = stack.Pop()!;
@@ -99,7 +99,7 @@ public class TreeAlgos<U> where U : IComparable<U>
             PrintValue(current);
 
             // go right
-            current = current.right;
+            current = current.Right;
         }
     }
 
@@ -120,13 +120,13 @@ public class TreeAlgos<U> where U : IComparable<U>
             var current = stack1.Pop()!;
             stack2.Push(current);
 
-            if (current.left != null)
+            if (current.Left != null)
             {
-                stack1.Push(current.left);
+                stack1.Push(current.Left);
             }
-            if (current.right != null)
+            if (current.Right != null)
             {
-                stack1.Push(current.right);
+                stack1.Push(current.Right);
             }
         }
 

@@ -4,14 +4,14 @@ public class BinarySearchTree<T> where T : IComparable<T>
     public class Node
     {
         public T value { get; set; }
-        public Node? left;
-        public Node? right;
+        public Node? Left;
+        public Node? Right;
 
         public Node(T value) 
         {
             this.value = value;
-            this.left = null;
-            this.right = null;
+            this.Left = null;
+            this.Right = null;
         }
     }
 
@@ -42,28 +42,28 @@ public class BinarySearchTree<T> where T : IComparable<T>
             // if less than current
             if (value.CompareTo(current.value) < 0)
             {
-                if (current.left == null)
+                if (current.Left == null)
                 {
-                    current.left = new Node(value);
+                    current.Left = new Node(value);
                     this.Size += 1;
                     return;
                 } 
                 else
                 {
-                    current = current.left;
+                    current = current.Left;
                 }
             }
             // higher than current
             else
             {
-                if (current.right == null)
+                if (current.Right == null)
                 {
-                    current.right = new Node(value);
+                    current.Right = new Node(value);
                     this.Size += 1;
                     return;
                 }
                 else {
-                    current = current.right;
+                    current = current.Right;
                 }
             }
         }
@@ -86,11 +86,11 @@ public class BinarySearchTree<T> where T : IComparable<T>
         // recursive step
         if (value.CompareTo(node.value) < 0)
         {
-            node.left = InsertRecursivelyHelper(node.left, value);
+            node.Left = InsertRecursivelyHelper(node.Left, value);
         }
         else
         {
-            node.right = InsertRecursivelyHelper(node.right, value);
+            node.Right = InsertRecursivelyHelper(node.Right, value);
         }
 
         return node;
